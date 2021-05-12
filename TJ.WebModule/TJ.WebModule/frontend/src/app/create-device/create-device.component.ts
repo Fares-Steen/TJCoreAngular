@@ -30,8 +30,8 @@ export class CreateDeviceComponent {
     this.deviceModel.name = this.name?.value
 
     if (this.form.valid) {
-      this.deviceService.createDevice(this.deviceModel).subscribe((result: any) => {
-        if ((result as DeviceModel).id != 0) {
+      this.deviceService.createDevice(this.deviceModel).subscribe((result: IDeviceModel) => {
+        if (result.id != 0) {
           this.showSuccess = true;
         }
       })

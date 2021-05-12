@@ -10,7 +10,8 @@ import { DeviceService } from './_services/device.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OrderModule } from 'ngx-order-pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule,
+    OrderModule
   ],
   providers: [
     DeviceService

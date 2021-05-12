@@ -1,1 +1,17 @@
-<p>devices-table works!</p>
+<h2 class="text-center text-primary">Devices table</h2>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th (click)="sort('id')">ID&nbsp;<fa-icon [icon]="faSort"></fa-icon> </th>
+      <th (click)="sort('name')">Name&nbsp;<fa-icon [icon]="faSort"></fa-icon> </th>
+      <th (click)="sort('date')">Created Date&nbsp;<fa-icon [icon]="faSort"></fa-icon> </th>
+</tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let device of devices | orderBy:key:reverse:true">
+      <td>{{device.id}}</td>
+      <td >{{device.name}}</td>
+      <td>{{device.dateAdded | date:'medium'}}</td>
+    </tr>
+  </tbody>
+</table>
