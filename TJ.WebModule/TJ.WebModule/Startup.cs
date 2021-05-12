@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TJ.DependencyInjection;
+using TJ.Interfaces.DbInterfaces;
 
 namespace TJ.WebModule
 {
@@ -26,10 +28,11 @@ namespace TJ.WebModule
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddPersistenceLibrary();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -46,6 +49,8 @@ namespace TJ.WebModule
             {
                 endpoints.MapControllers();
             });
+
+            dbInitializer.Initialize();
         }
     }
 }

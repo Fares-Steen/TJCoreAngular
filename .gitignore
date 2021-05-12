@@ -406,3 +406,4 @@ tools/gulp-tasks/cldr/cldr-data/
 
 # Husky
 .husky/_
+/TJ.WebModule/TJ.WebModule/DeviceDb.db

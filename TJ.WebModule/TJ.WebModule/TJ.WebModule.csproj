@@ -8,5 +8,12 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TJ.Application\TJ.Application.csproj" />
+    <ProjectReference Include="..\TJ.DependencyInjection\TJ.DependencyInjection.csproj" />
+    <ProjectReference Include="..\TJ.Interfaces\TJ.Interfaces.csproj" />
+    <ProjectReference Include="..\TJ.Models\TJ.Models.csproj" />
+  </ItemGroup>
+
 
 </Project>

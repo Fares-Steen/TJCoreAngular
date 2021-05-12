@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TJ.Application\TJ.Application.csproj" />
+    <ProjectReference Include="..\TJ.Persistence\TJ.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>
