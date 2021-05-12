@@ -1,9 +1,21 @@
-<p>create-device works!</p>
-<div class="col-12">
-  <div class="col-6">
-    <label>111</label>
+
+  <div *ngIf="showSuccess" class="alert alert-success" role="alert">
+   The device has been added
+    <button (click)="dismissAlertMessage()" type="button" class="btn-close"  aria-label="Close" style="float:right"></button>
   </div>
-  <div class="col-6">
-    <button type="button" class="btn btn-primary">Primary</button>
-  </div>
-</div>
+
+  <form [formGroup]="form">
+    <div class="col-12 row">
+      <div class="col-4"></div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <h2 class="text-center text-primary">Create new device</h2>
+        <hr>
+        <div class="form-group">
+          <input formControlName="name" type="text" class="form-control" id="name" placeholder="device name">
+        </div>
+        <button class="btn btn-success mr-2" type="submit" [disabled]="form.invalid" (click)="createDevice()">Create</button>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </form>
+

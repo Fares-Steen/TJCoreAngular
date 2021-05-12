@@ -30,6 +30,8 @@ namespace TJ.WebModule
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors(x => x.WithOrigins("http://localhost:4200")
+         .AllowAnyMethod().AllowAnyHeader().AllowCredentials());
             }
 
             app.UseHttpsRedirection();

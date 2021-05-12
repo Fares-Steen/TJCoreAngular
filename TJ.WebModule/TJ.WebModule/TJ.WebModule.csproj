@@ -5,10 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="frontend\src\app\_models\deviceModel.ts" />
+    <None Remove="frontend\src\app\_services\device.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TJ.Application\TJ.Application.csproj" />
     <ProjectReference Include="..\TJ.DependencyInjection\TJ.DependencyInjection.csproj" />
     <ProjectReference Include="..\TJ.Interfaces\TJ.Interfaces.csproj" />
     <ProjectReference Include="..\TJ.Models\TJ.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="frontend\src\app\_models\deviceModel.ts" />
+    <TypeScriptCompile Include="frontend\src\app\_services\device.service.ts" />
   </ItemGroup>
 
 

@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { CreateDeviceComponent } from './create-device/create-device.component';
 import { DevicesTableComponent } from './devices-table/devices-table.component';
+import { DeviceService } from './_services/device.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,9 +20,15 @@ import { DevicesTableComponent } from './devices-table/devices-table.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    DeviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
