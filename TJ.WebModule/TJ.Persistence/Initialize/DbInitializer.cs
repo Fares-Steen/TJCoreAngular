@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TJ.Interfaces.DbInterfaces;
 
 namespace TJ.Persistence.Initialize
