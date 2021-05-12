@@ -16,8 +16,6 @@ namespace TJ.Persistence
         }
 
         public virtual DbSet<Device> Device { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-    => options.UseSqlite("DataSource=DeviceDb.db");
         public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DevicesDbContext>
         {
             public DevicesDbContext CreateDbContext(string[] args)
