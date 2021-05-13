@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "echo Starting... && ng serve",
     "build": "ng build",
+    "build:ssr": "ng run TJ.WebModule:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

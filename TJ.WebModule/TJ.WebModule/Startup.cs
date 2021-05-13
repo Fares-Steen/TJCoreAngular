@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using System.IO;
 using TJ.DependencyInjection;
 using TJ.Interfaces.DbInterfaces;
-
+using Microsoft.AspNetCore.SpaServices.AngularCli;
 namespace TJ.WebModule
 {
     public class Startup
@@ -32,22 +32,43 @@ namespace TJ.WebModule
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseCors(x => x.WithOrigins("http://localhost:4200")
-         .AllowAnyMethod().AllowAnyHeader().AllowCredentials());
+            }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            if (!env.IsDevelopment())
+            {
+                app.UseSpaStaticFiles();
+            }
 
             app.UseRouting();
 
-            app.UseAuthorization();
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller}/{action=Index}/{id?}");
             });
+
+            app.UseSpa(spa =>
+            {
+                // To learn more about options for serving an Angular SPA from ASP.NET Core,
+                // see https://go.microsoft.com/fwlink/?linkid=864501
+
+                spa.Options.SourcePath = "frontend";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseAngularCliServer(npmScript: "start");
+                }
+            });
+
             dbInitializer.Initialize();
         }
     }

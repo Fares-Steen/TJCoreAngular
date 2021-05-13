@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.15" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TJ.Application\TJ.Application.csproj" />
     <ProjectReference Include="..\TJ.DependencyInjection\TJ.DependencyInjection.csproj" />
     <ProjectReference Include="..\TJ.Interfaces\TJ.Interfaces.csproj" />
