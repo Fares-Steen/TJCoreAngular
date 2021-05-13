@@ -15,6 +15,10 @@ export class DevicesTableComponent implements OnInit {
   constructor(private deviceService: DeviceService) {
   }
   ngOnInit(): void {
+    this.readAllDevices()
+  }
+
+  readAllDevices() {
     this.deviceService.getDevices().subscribe((response: IDeviceModel[]) => {
       this.devices = response;
     });
@@ -22,7 +26,7 @@ export class DevicesTableComponent implements OnInit {
 
   key:string = 'date'
   reverse: boolean = false;
-  sort(key: string) {
+  sortDevicesTableBy(key: string) {
     this.key = key
     this.reverse = !this.reverse
   }

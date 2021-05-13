@@ -1,4 +1,6 @@
 <div class="container">
-  <app-create-device></app-create-device>
-  <app-devices-table></app-devices-table>
+  <div class="mb-5 mt-5">
+  <app-create-device (newDeviceCreatedEvent)="devicesTable.readAllDevices()"></app-create-device>
+  </div>
+  <app-devices-table #devicesTable></app-devices-table>
 </div>
